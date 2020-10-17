@@ -4,6 +4,3 @@ Website
 
 ## Install jenkins
 http://happer.ddns.net:8080/
-testing the jenkins build setup
-second test
-third test
