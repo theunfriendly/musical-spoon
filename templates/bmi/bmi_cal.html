@@ -5,9 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>Body Mass Calculator </h3>
-    <h4>Height = 1.5</h4>
-    <h4>weight = 65</h4>
-    <h4>{{ bmi }}</h4>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Body Mass Calculator</h4>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label>Height</label>
+                                    <input type="number" name="height" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>Weight</label>
+                                    <input type="number" name="weight" class="form-control">
+                                </div>
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<h3>{{ bmi }}</h3>
 </html>
