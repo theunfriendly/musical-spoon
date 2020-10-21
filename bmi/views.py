@@ -4,15 +4,15 @@ from django.shortcuts import render,redirect
 def calculateBMI(weight, height):
     return weight / (height ** 2)
 
-def index(request):
+def index(request,id):
     if request.method == "POST":
         height = request.POST.get('height')
         weight = request.POST.get('weight')
-        context = {'bmi': calculateBMI(int(height), int(weight))}
+        context = {'bmi': calculateBMI(float(height), float(weight))}
         for i,j in context.items():
             bmi_cal = j
         print(bmi_cal,'kkk')
-        return redirect('/bmi/success/'+str(bmi_cal))
+        return redirect('/bmi/index/'+str(bmi_cal))
     return render(request, 'bmi/bmi_cal.html',locals())
 
 def success(request,id):
