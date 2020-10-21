@@ -8,7 +8,7 @@ def index(request):
     if request.method == "POST":
         height = request.POST.get('height')
         weight = request.POST.get('weight')
-        context = {'bmi': calculateBMI(int(height), int(weight))}
+        context = {'bmi': calculateBMI(float(height), float(weight))}
         for i,j in context.items():
             bmi_cal = j
         print(bmi_cal,'kkk')
